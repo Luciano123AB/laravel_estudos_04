@@ -5,19 +5,18 @@ namespace Database\Seeders;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Str;
 
-class UsersTableSeeder extends Seeder
+class UsersTableSeeder01 extends Seeder
 {
     /**
      * Run the database seeds.
      */
     public function run(): void
     {
-        $this->call([
-            UsersTableSeeder01::class,
-            UsersTableSeeder02::class,
-            UsersTableSeeder03::class
+        DB::table("users")->insert([
+            "username" => "User01",
+            "password" => bcrypt("senha"),
+            "active" => true
         ]);
     }
 }
